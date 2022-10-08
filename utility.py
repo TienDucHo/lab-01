@@ -52,13 +52,13 @@ def visualize_maze(matrix, bonus, start, end, route=None):
         ax.spines[i].set_visible(False)
 
     plt.scatter([i[1] for i in walls], [-i[0] for i in walls],
-                marker='X', s=100, color='black')
+                marker='X', s=50, color='black')
 
     plt.scatter([i[1] for i in bonus], [-i[0] for i in bonus],
-                marker='P', s=100, color='green')
+                marker='P', s=50, color='green')
 
     plt.scatter(start[1], -start[0], marker='*',
-                s=100, color='gold')
+                s=50, color='gold')
 
     if route:
         for i in range(len(route) - 2):
