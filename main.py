@@ -1,14 +1,38 @@
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+import getopt
+import sys
 
+def main ():
+    inp_name = ""
+    out_name = ""
+    algo = ""
+    argv = sys.argv[1:]
+    try:
+        opts, args = getopt.getopt(argv, 'i:o:a', ["input=", "output=", "algorithm="])
+    except getopt.GetoptError:
+        print("Command error")
+        sys.exit(2)
 
-# Input
-# Search
-# Output
+    for com, val in opts:
+        if com in ['-i', '--input']:
+            inp_name = val
+        elif com in ['-o', '--output']:
+            out_name = val
+        elif com in ['-a', '--algorithm']:
+            algo = val
+    if inp_name == "" or out_name == "" or algo == "":
+        print("Missing elements")
+        sys.exit(2)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    route = []
+    if algo=="dfs":
+        route=dfs()
+    elif algo=="bfs":
+        route=bfs()
+    elif algo=="greedybfs":
+        route=greedybfs()
+    elif algo=="astar":
+        route=astar()
+    elif algo=="bonus":
+        route=bonus()
+    else:
+        print("Please check all the algorithms you can use")
