@@ -24,6 +24,6 @@ class GreedyBFS(Base):
                 if not self.inside_matrix(neighbor):
                     continue
                 if neighbor not in trace:
-                    queue.queue.append([heuristic(neighbor, self.end), neighbor])
+                    queue.put([heuristic(neighbor, self.end), neighbor])
                     trace[neighbor] = current
         return self.trace_path(trace)

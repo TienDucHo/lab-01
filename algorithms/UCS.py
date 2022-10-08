@@ -14,7 +14,7 @@ class UCS(Base):
     def find(self):
         visited, priority_queue = [], PriorityQueue()
         trace = {self.start: None}
-        priority_queue.queue.append([0, self.start])
+        priority_queue.put([0, self.start])
         number_of_nodes = len(self.matrix) * len(self.matrix[0])
         distance = {}
         for i in range(len(self.matrix)):
@@ -34,7 +34,7 @@ class UCS(Base):
                     neighbor_dist = distance[current] + neighbor_cost
                     if distance[neighbor] <= neighbor_dist:
                         continue
-                    priority_queue.queue.append([neighbor_dist, neighbor])
+                    priority_queue.put([neighbor_dist, neighbor])
                     trace[neighbor] = current
                     distance[neighbor] = neighbor_dist
 
