@@ -1,5 +1,5 @@
-import os
 import matplotlib.pyplot as plt
+
 
 def read_from_file(filename):
     bonus, matrix = [], []
@@ -13,7 +13,9 @@ def read_from_file(filename):
         matrix = [list(line.strip()) for line in lines[n + 1:]]
     return bonus, matrix
 
-def getStartEnd(matrix):
+
+def get_start_end(matrix):
+    start, end = [], []
     for i in range(len(matrix)):
         for j in range(len(matrix[0])):
             if matrix[i][j] == 'S':
