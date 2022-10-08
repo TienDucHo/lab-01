@@ -1,7 +1,14 @@
 import getopt
 import sys
 
-def main ():
+from algorithms.AStar import *
+from algorithms.BFS import *
+from algorithms.DFS import *
+from algorithms.GreedyBFS import *
+from algorithms.UCS import *
+
+
+def main():
     inp_name = ""
     out_name = ""
     algo = ""
@@ -24,15 +31,15 @@ def main ():
         sys.exit(2)
 
     route = []
-    if algo=="dfs":
-        route=dfs()
-    elif algo=="bfs":
-        route=bfs()
-    elif algo=="greedybfs":
-        route=greedybfs()
-    elif algo=="astar":
-        route=astar()
-    elif algo=="bonus":
-        route=bonus()
+    if algo == "dfs":
+        route = DFS.find()
+    elif algo == "bfs":
+        route = find()
+    elif algo == "greedybfs":
+        route = greedybfs()
+    elif algo == "astar":
+        route = astar()
+    elif algo == "bonus":
+        route = bonus()
     else:
         print("Please check all the algorithms you can use")
