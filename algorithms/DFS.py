@@ -1,4 +1,4 @@
-from Base import *
+from algorithms.Base import *
 
 
 class DFS(Base):
@@ -18,9 +18,7 @@ class DFS(Base):
                 break
             for step in self.steps:
                 neighbor = (current[0] + step[0], current[1] + step[1])
-
-                if self.inside_matrix(neighbor) and neighbor not in visited:
+                if self.inside_matrix(neighbor) and (neighbor not in visited):
                     stack.append(neighbor)
                     trace[neighbor] = current
-
         return self.trace_path(trace)

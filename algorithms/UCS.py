@@ -1,6 +1,6 @@
 from queue import PriorityQueue
 
-from Base import *
+from algorithms.Base import *
 
 
 def cost(start, end):
@@ -22,7 +22,7 @@ class UCS(Base):
                 distance[(i, j)] = float('inf')
         distance[self.start] = 0
         while not priority_queue.empty():
-            dist, current = priority_queue.queue.pop()
+            dist, current = priority_queue.get()
             if current == self.end:
                 break
             if dist > distance[current]:

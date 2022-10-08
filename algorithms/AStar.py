@@ -1,4 +1,4 @@
-from GreedyBFS import *
+from algorithms.GreedyBFS import *
 
 
 class AStar(GreedyBFS):

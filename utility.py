@@ -15,7 +15,7 @@ def read_from_file(filename):
 
 
 def get_start_end(matrix):
-    start, end = [], []
+    start, end = (), ()
     for i in range(len(matrix)):
         for j in range(len(matrix[0])):
             if matrix[i][j] == 'S':
@@ -30,7 +30,7 @@ def get_start_end(matrix):
 
 def visualize_maze(matrix, bonus, start, end, route=None):
     walls = [(i, j) for i in range(len(matrix)) for j in range(len(matrix[0])) if matrix[i][j] == 'x']
-
+    direction = []
     if route:
         direction = []
         for i in range(1, len(route)):
@@ -52,13 +52,13 @@ def visualize_maze(matrix, bonus, start, end, route=None):
         ax.spines[i].set_visible(False)
 
     plt.scatter([i[1] for i in walls], [-i[0] for i in walls],
-                marker='X', s=100, color='black')
+                marker='X', s=50, color='black')
 
     plt.scatter([i[1] for i in bonus], [-i[0] for i in bonus],
-                marker='P', s=100, color='green')
+                marker='P', s=50, color='green')
 
     plt.scatter(start[1], -start[0], marker='*',
-                s=100, color='gold')
+                s=50, color='gold')
 
     if route:
         for i in range(len(route) - 2):
@@ -70,10 +70,11 @@ def visualize_maze(matrix, bonus, start, end, route=None):
              verticalalignment='center')
     plt.xticks([])
     plt.yticks([])
-    plt.show()
 
     print(f'Starting point (x, y) = {start[0], start[1]}')
     print(f'Ending point (x, y) = {end[0], end[1]}')
 
     for _, point in enumerate(bonus):
         print(f'Bonus point at position (x, y) = {point[0], point[1]} with point {point[2]}')
+
+    return plt

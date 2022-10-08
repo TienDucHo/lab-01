@@ -7,11 +7,11 @@ class Base:
         self.steps = [(0, 1), (0, -1), (1, 0), (-1, 0)]
 
     def inside_matrix(self, point):
-        if point[0] > len(self.matrix) or point[0] < 0:
+        if point[0] >= len(self.matrix) or point[0] < 0:
             return False
         if point[1] >= len(self.matrix[0]) or point[1] < 0:
             return False
-        if self.matrix[point[0]][point[1]] != self.wall_symbol:
+        if self.matrix[point[0]][point[1]] == self.wall_symbol:
             return False
         return True
 

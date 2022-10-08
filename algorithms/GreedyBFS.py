@@ -1,10 +1,10 @@
 from queue import PriorityQueue
 
-from Base import *
+from algorithms.Base import *
 
 
 def heuristic(start, end):
-    return abs(start[0] - end[0]) + abs(end[0] - end[1])
+    return abs(start[0] - end[0]) + abs(start[1] - end[1])
 
 
 class GreedyBFS(Base):
@@ -16,7 +16,7 @@ class GreedyBFS(Base):
         queue.put([0, self.start])
         trace = {self.start: None}
         while not queue.empty():
-            dis, current = queue.queue.pop()
+            dis, current = queue.get()
             if current == self.end:
                 break
             for step in self.steps:

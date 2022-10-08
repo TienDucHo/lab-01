@@ -1,6 +1,6 @@
 from collections import deque
 
-from Base import *
+from algorithms.Base import *
 
 
 class BFS(Base):
