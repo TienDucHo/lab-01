@@ -27,6 +27,3 @@ class Base:
         path.reverse()
 
         return path
-
-    def find(self):
-        pass
