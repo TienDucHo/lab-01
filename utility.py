@@ -10,7 +10,7 @@ def read_from_file(filename):
             x, y, reward = map(int, lines[i + 1].split(' '))
             bonus.append((x, y, reward))
 
-        matrix = [list(line.strip()) for line in lines[n + 1:]]
+        matrix = [list(line.strip("\n")) for line in lines[n + 1:]]
     return bonus, matrix
 
 
