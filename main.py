@@ -56,7 +56,7 @@ def main():
 
     if len(route1) > 0:
         plt2 = utility.visualize_maze(matrix, bonus, start, end, route1)
-        plt2.savefig("{}-euclid.png".format(out_name.split('.')[0]))
+        plt2.savefig("{}-euclid.png".format(out_name))
 
 
 if __name__ == '__main__':
